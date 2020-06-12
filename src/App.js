@@ -1,26 +1,58 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{Component,Suspense} from 'react';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const ViewMain = React.lazy(() =>
+    import(/* webpackChunkName: "views" */ './views')
+);
+const ViewApp = React.lazy(() =>
+    import(/* webpackChunkName: "views-app" */ './views/app')
+);
+const ViewUser = React.lazy(() =>
+    import(/* webpackChunkName: "views-user" */ './views/user')
+);
+const ViewError = React.lazy(() =>
+    import(/* webpackChunkName: "views-error" */ './views/error')
+);
+
+class App extends Component {
+  render() {
+    return (
+        <React.Fragment>
+          <Suspense fallback={<div className="loading" />}>
+            <Router basename={process.env.PUBLIC_URL}>
+              <Switch>
+                <Route
+                    path="/app"
+                    render={props => <ViewApp {...props} />}
+
+                />
+                <Route
+                    path="/user"
+                    render={props => <ViewUser {...props} />}
+                />
+                <Route
+                    path="/error"
+                    exact
+                    render={props => <ViewError {...props} />}
+                />
+                <Route
+                    path="/"
+                    exact
+                    render={props => <ViewMain {...props} />}
+                />
+                <Redirect to="/error" />
+              </Switch>
+            </Router>
+          </Suspense>
+        </React.Fragment>
+
+    )}
+
 }
-
 export default App;
