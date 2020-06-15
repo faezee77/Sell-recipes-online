@@ -1,27 +1,36 @@
-import React,{Component} from 'react';
-import logo from '../../logo.svg'
-
+import PrimarySearchAppBar from '../components/header'
+import React,{Component} from "react";
+import Carousel from 'react-material-ui-carousel'
+import Support from "../components/support";
+import image1 from '../../images/1.jpg'
+import image2 from '../../images/South-Indian-Bruschetta-Recipe.jpg'
+import Grid from "@material-ui/core/Grid";
+import Cards from "../components/gridCard";
+import ImageGridList from "../components/imagegrid"
 class Home extends Component{
+    render() {
 
-    render(){
+        var items = [image1,image2]
+
         return(
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <p>
-                        Edit <code>src/App.js</code> and save to reload.
-                    </p>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                <Grid xs={12}>
+                    <PrimarySearchAppBar/>
+                    <Carousel
+                        animation='fade'
+                        navButtonsAlwaysVisible='True'
+                        interval={2000}
                     >
-                        Learn React
-                    </a>
-                </header>
-            </div>
+                        {
+                            items.map( item => <img height='600px' width='100%' src={item}  alt='img'/> )
+                        }
+                    </Carousel>
+                    <Support/>
+                    <Cards/>
+                    <ImageGridList/>
+                </Grid>
+
         )
     }
 }
-export default Home;
+
+export default Home
