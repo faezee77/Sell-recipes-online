@@ -1,5 +1,6 @@
 import React,{Component,Suspense} from 'react';
 import './App.css';
+
 import {
   BrowserRouter as Router,
   Route,
@@ -23,7 +24,9 @@ const ViewError = React.lazy(() =>
 class App extends Component {
   render() {
     return (
-        <React.Fragment>
+      <div className='App'>
+         
+         <React.Fragment>
           <Suspense fallback={<div className="loading" />}>
             <Router basename={process.env.PUBLIC_URL}>
               <Switch>
@@ -51,6 +54,9 @@ class App extends Component {
             </Router>
           </Suspense>
         </React.Fragment>
+        
+      </div>
+       
 
     )}
 
