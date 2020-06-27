@@ -5,9 +5,7 @@ import { Route, withRouter, Switch, Redirect } from 'react-router-dom';
 const Home = React.lazy(() =>
     import(/* webpackChunkName: "views-home" */ './home')
 );
-const EachPost = React.lazy(() =>
-    import(/* webpackChunkName: "views-home" */ './postpage')
-);
+
 
 
 class App extends Component {
@@ -22,11 +20,6 @@ class App extends Component {
                         <Route
                             path={`${match.url}/home`}
                             render={props => <Home {...props} />}
-                        />
-                        <Redirect exact from={`${match.url}/`} to={`${match.url}/postpage`} />
-                        <Route
-                            path={`${match.url}/postpage`}
-                            render={props => <EachPost {...props} />}
                         />
                     </Switch>
                 </Suspense>

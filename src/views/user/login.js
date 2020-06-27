@@ -1,18 +1,12 @@
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
-import Box from '@material-ui/core/Box';
+
 import Grid from '@material-ui/core/Grid';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Card from '@material-ui/core/Card';
-import Fab from '@material-ui/core/Fab';
 import logo from "../../image/food.jpg"
 
 
@@ -26,89 +20,68 @@ import { makeStyles } from '@material-ui/core/styles';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 
+import InputBase from '@material-ui/core/InputBase';
+import InputLabel from '@material-ui/core/InputLabel';
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 const theme = createMuiTheme({
-  direction: 'rtl', // Both here and <body dir="rtl">
+  direction: 'rtl'
 });
 
-// import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-
-// import Signup from "./Signup"
-// function Copyright() {
-//   return (
-//     <Typography variant="body2" color="textSecondary" align="center">
-//       {'Copyright © '}
-//       <Link color="inherit" href="https://material-ui.com/">
-//         Your Website
-//       </Link>{' '}
-//       {new Date().getFullYear()}
-//       {'.'}
-//     </Typography>
-//   );
-// }
-// Configure JSS
 const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
+const CssTextField = withStyles({
+  root: {
+    '& label.Mui-focused': {
+      color: 'green',
+      borderColor: 'green'
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'green',
+    },
+    '& .MuiOutlinedInput-root': {
+
+      '&.Mui-focused fieldset': {
+        borderColor: 'green',
+      },
+    },
+
+  },
+})(TextField);
+
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    height: '100vh',
-  },
-  image: {
-    // backgroundImage: 'url(https://source.unsplash.com/random)',
-    backgroundImage: { logo },
-    // backgroundRepeat: 'no-repeat',
-    // backgroundColor:
-    //   theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
-    // backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
+
+
   paper: {
     margin: theme.spacing(8, 4),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
   },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: '100%',
     marginTop: theme.spacing(1),
   },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
 
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    '& > *': {
-      margin: theme.spacing(1),
-      width: theme.spacing(16),
-      height: theme.spacing(16),
-    },
 
-  },
   green: {
     color: '#fff',
     backgroundColor: "#3AAFA9",
+    '&:hover': {
+      backgroundColor: '#3AAFA9',
+    },
   },
 
 }));
 const GreenCheckbox = withStyles({
   root: {
-    color: '#3AAFA9',
-    '&$checked': {
-      color: '#3aa2af',
-    },
+    color: '#3AAFA9'
   },
-  checked: {},
+
 })((props) => <Checkbox color="default" {...props} />);
 
-export default function SignInSide() {
+export default function SignIn() {
   const classes = useStyles();
 
   const [state, setState] = React.useState({
@@ -119,9 +92,6 @@ export default function SignInSide() {
 
   const { vertical, horizontal, open } = state;
 
-  const handleClick = (newState) => () => {
-    setState({ open: true, ...newState });
-  };
 
   const handleClose = () => {
     setState({ ...state, open: false });
@@ -129,11 +99,7 @@ export default function SignInSide() {
 
   return (
 
-
-    // <Card alignItems="center"
-    // justify="center" className={classes.root}>
-    // <CardContent>
-    <ThemeProvider theme={theme}>
+    <div >
 
       <br></br>
       <br></br>
@@ -144,95 +110,84 @@ export default function SignInSide() {
           container component="main">
 
 
-          <Grid textAlign="right" item xs={1} sm={1} md={4} component={Paper} elevation={6} square>
+          <Grid textAlign="right" item xs={1} sm={1} md={4} component={Paper} elevation={6} >
             <div className={classes.paper}>
-              {/* <Avatar className={classes.avatar}> */}
-              {/* <LockOutlinedIcon /> */}
-              {/* </Avatar> */}
+
               <Typography component="h1" variant="h5" styly={{ backgroundColor: "#009688" }}>
                 ورود به حساب کاربری
           </Typography>
-              <form className={classes.form}  autoComplete="off">
-                <TextField
+              <form className={classes.form} autoComplete="off">
+
+                <CssTextField
                   variant="outlined"
+                  id="custom-css-outlined-input password"
                   margin="normal"
                   required
                   inputProps={{ style: { textAlign: 'right' } }}
                   InputLabelProps={{ style: { textAlign: 'right' } }}
                   fullWidth
-                  id="username"
                   label="نام کاربری"
-                  name="username"
-                  autoComplete="username"
-                  autoFocus
-                  defaultValue="سارا"
-
                 />
-                <TextField
+                <CssTextField
                   variant="outlined"
+                  id="custom-css-outlined-input password"
                   margin="normal"
                   required
                   fullWidth
-                  name="password"
                   label="رمز عبور"
                   type="password"
-                  id="password"
-                  // helperText="لطفا این مورد را تکمیل کنید."
-                  // error
+                // helperText="لطفا این مورد را تکمیل کنید."
+                // error
+                />
 
-                />
                 <br></br>
-              <Grid 
-                 style={{textAlign:"right", justify:"right"}}
-              
-              >
-                <FormControlLabel
-                  control={<GreenCheckbox value="remember" />}
-                  label="مرا به خاطر بسپار"
-                  fullWidth
-                />
-                <br></br>
+                <Grid
+                  style={{ textAlign: "right", justify: "right" }}
+
+                >
+                  <FormControlLabel
+                    control={<GreenCheckbox value="remember" />}
+                    label="مرا به خاطر بسپار"
+                    fullWidth
+                  />
+                  <br></br>
                 </Grid>
+                <br></br>
+
                 <Button
                   type="submit"
                   fullWidth
                   variant="contained"
                   color="primary"
-                  className={classes.submit, classes.green}
+                  className={ classes.green}
                   size="large"
-                  onClick={handleClick({ vertical: 'top', horizontal: 'center' })}
                 >
                   <Typography component="h6" variant="h5">
                     ورود
           </Typography>
                 </Button>
 
-      <Snackbar anchorOrigin={{ vertical, horizontal }} open={open} autoHideDuration={6000} onClose={handleClose}>
-      <Alert severity="error">                  <Typography component="h6" variant="h6">
+                <Snackbar anchorOrigin={{ vertical, horizontal }} open={open} autoHideDuration={6000} onClose={handleClose}>
+                  <Alert severity="error">                  <Typography component="h6" variant="h6">
                     رمز ورود معتبر نمیباشد.
           </Typography></Alert>
-      </Snackbar>
+                </Snackbar>
 
-  
-                {/* <Fab variant="extended" color="primary" size="large" >
-              
-          Sign In
-        </Fab> */}
                 <br></br>
                 <br></br>
 
-                <Grid marginTop={"80"} justify="flex-start" 
+                <Grid marginTop={"80"} justify="flex-start"
                   container direction="column" alignItems="flex-start">
                   <Grid item xs >
-                    <Link href="#" variant="body1"  color="#65ccb8" >
+                    <Link href="#" variant="body1" color="#65ccb8" >
                       <p  >
-                      رمز خود را فراموش کرده اید؟
+                        رمز خود را فراموش کرده اید؟
                       </p>
                     </Link>
                   </Grid>
                   <Grid item>
                     <Link href="#" variant="body1" color="#65ccb8">
-                    حساب کاربری ندارید؟ ایجاد حساب
+                      حساب کاربری ندارید؟ ایجاد حساب
                     </Link>
                   </Grid>
 
@@ -246,9 +201,8 @@ export default function SignInSide() {
           </Grid>
         </Grid>
       </div>
-    </ThemeProvider >
-    // </CardContent>
-    // </Card>
+
+    </div >
   );
 }
 
