@@ -1,19 +1,14 @@
 {
-  "name": "humancomputerproject",
+  "name": "recipe",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.10.2",
-    "@material-ui/icons": "^4.9.1",
-    "@material-ui/lab": "^4.0.0-alpha.56",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "jss-rtl": "^0.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-jss": "^10.3.0",
-    "react-player": "^2.3.1",
     "react-scripts": "3.4.1"
   },
   "scripts": {
@@ -38,6 +33,9 @@
     ]
   },
   "devDependencies": {
-    "react-router-dom": "^5.2.0"
+    "@material-ui/icons": "latest",
+    "clsx": "latest",
+    "jss": "latest",
+    "jss-rtl": "^0.3.0"
   }
 }
