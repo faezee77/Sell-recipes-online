@@ -32,19 +32,19 @@ const theme = createMuiTheme({
 const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
 const CssTextField = withStyles({
   root: {
-    '& label.Mui-focused': {
-      color: 'green',
-      borderColor: 'green'
-    },
-    '& .MuiInput-underline:after': {
-      borderBottomColor: 'green',
-    },
-    '& .MuiOutlinedInput-root': {
-
-      '&.Mui-focused fieldset': {
-        borderColor: 'green',
+      '& label.Mui-focused': {
+          color: '#65ccb8',
+          borderColor: '#65ccb8'
       },
-    },
+      '& .MuiInput-underline:after': {
+          borderBottomColor: '#65ccb8',
+      },
+      '& .MuiOutlinedInput-root': {
+
+          '&.Mui-focused fieldset': {
+              borderColor: '#65ccb8',
+          },
+      },
 
   },
 })(TextField);
@@ -67,16 +67,16 @@ const useStyles = makeStyles((theme) => ({
 
   green: {
     color: '#fff',
-    backgroundColor: "#3AAFA9",
+    backgroundColor: "#65ccb8",
     '&:hover': {
-      backgroundColor: '#3AAFA9',
+      backgroundColor: '#65ccb8',
     },
   },
 
 }));
 const GreenCheckbox = withStyles({
   root: {
-    color: '#3AAFA9'
+    color: '#65ccb8'
   },
 
 })((props) => <Checkbox color="default" {...props} />);
@@ -105,7 +105,7 @@ export default function SignIn() {
       <br></br>
       <br></br>
       <br></br>
-      <div dir="rtl">
+      <div >
         <Grid justify="center"
           container component="main">
 

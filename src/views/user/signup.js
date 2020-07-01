@@ -18,16 +18,16 @@ import { withStyles } from '@material-ui/core/styles';
 const CssTextField = withStyles({
     root: {
         '& label.Mui-focused': {
-            color: '#3AAFA9',
-            borderColor: '#3AAFA9'
+            color: '#65ccb8',
+            borderColor: '#65ccb8'
         },
         '& .MuiInput-underline:after': {
-            borderBottomColor: '#3AAFA9',
+            borderBottomColor: '#65ccb8',
         },
         '& .MuiOutlinedInput-root': {
 
             '&.Mui-focused fieldset': {
-                borderColor: '#3AAFA9',
+                borderColor: '#65ccb8',
             },
         },
 
@@ -47,15 +47,15 @@ const useStyles = makeStyles((theme) => ({
 
     green: {
         color: '#fff',
-        backgroundColor: "#3AAFA9",
+        backgroundColor: "#65ccb8",
     },
 
 }));
 const GreenCheckbox = withStyles({
     root: {
-        color: '#3AAFA9',
+        color: '#65ccb8',
         '&$checked': {
-            color: '#3aa2af',
+            color: '#65ccb8',
         },
     },
     checked: {},
