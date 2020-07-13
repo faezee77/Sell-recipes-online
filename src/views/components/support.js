@@ -15,7 +15,8 @@ const useStyles = (theme) => ({
         height: 200,
         width: 200,
         borderRadius:'50%',
-        border:'6px #65ccb8 solid '
+        border:'6px #65ccb8 solid ',
+        margin: theme.spacing(3),
     },
     control: {
         padding: theme.spacing(2),
@@ -49,12 +50,11 @@ class Support extends Component{
             ];
         return(
             <div>
-
                  <Typography className={classes.title}  variant="h5" noWrap>
                      با ما تجربه کیند
                  </Typography>
                 <Divider className={classes.divider}/>
-             <Grid container justify="center" spacing={10}>
+             <Grid container justify="center">
                  {item.map((value) => (
                      <Grid key={value} item>
                          <img className={classes.img} src={value.image} width='100%' height='100%'  alt='i'/>

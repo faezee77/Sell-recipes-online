@@ -7,14 +7,16 @@ import image2 from '../../images/South-Indian-Bruschetta-Recipe.jpg'
 import Grid from "@material-ui/core/Grid";
 import Cards from "../components/gridCard";
 import ImageGridList from "../components/imagegrid"
+import SideBar from '../components/sidebar'
 class Home extends Component{
     render() {
 
         var items = [image1,image2]
 
         return(
-                <Grid xs={12}>
-                    <PrimarySearchAppBar/>
+                <Grid >
+                    {/*<SideBar/>*/}
+                    {/*<PrimarySearchAppBar/>*/}
                     <Carousel
                         animation='fade'
                         navButtonsAlwaysVisible='True'
