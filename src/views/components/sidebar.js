@@ -133,7 +133,7 @@ const useStyles = makeStyles((theme) => ({
     divtitle:{
       backgroundColor:'#dddddd',
         borderRadius:'50%',
-        marginRight:'360px'
+        marginRight:'390px'
     },
     title: {
         display: 'none',

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -11,11 +11,13 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import chef from "../../images/Cooking-Chefs-PPT-Backgrounds.jpg"
 import classNames from 'classnames'
-
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
 import { withStyles,createMuiTheme,MuiThemeProvider } from '@material-ui/core/styles';
 import {primaryColor, secondryColor} from "../../constants/defaultsValues";
 import clsx from "clsx";
-import pic from "../../images/pic.jpg";
+import Modal from "@material-ui/core/Modal";
+import pic from '../../images/pic.jpg'
 
 const theme = createMuiTheme({
     overrides: {
@@ -78,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
     green: {
         color: '#fff',
         backgroundColor: "#3AAFA9",
-        marginTop:'10px'
+        marginTop:'60px'
     },
     root:{
         backgroundImage: `url(${pic})`,
@@ -95,6 +97,21 @@ const useStyles = makeStyles((theme) => ({
         color:'white',
         fontSize:'20px'
     },
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    papermodal: {
+        backgroundColor: theme.palette.background.paper,
+        border: '1px solid',
+        borderColor:primaryColor,
+        boxShadow: theme.shadows[3],
+        padding: theme.spacing(2, 4, 3),
+    },
+    txtalgin:{
+        textAlign:'left'
+    }
 }));
 const GreenCheckbox = withStyles({
     root: {
@@ -109,8 +126,17 @@ const GreenCheckbox = withStyles({
 
 
 
-export default function Verification(props) {
+export default function PassWord(props) {
     const classes = useStyles();
+    const [open,setOpen]=React.useState(false)
+
+    const handleOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     return (
         <div className={classes.root}>
@@ -126,7 +152,7 @@ export default function Verification(props) {
                 >
                     <div className={classes.paper} width='50%'>
                         <Typography component="h1" variant="h5">
-                            احراز کاربر
+                            رمز عبور
                         </Typography>
                         <form className={classes.form} noValidate>
 
@@ -134,11 +160,11 @@ export default function Verification(props) {
                                 id="custom-css-outlined-input password"
                                 variant="outlined"
                                 margin="normal"
-                                disabled
+                                required
                                 fullWidth
-                                name="phone number"
-                                label="09036894343"
-                                id="phone number"
+                                name="password"
+                                label="رمز عبور"
+                                id="password"
                             />
                             <CssTextField
                                 id="custom-css-outlined-input password"
@@ -146,22 +172,20 @@ export default function Verification(props) {
                                 required
                                 fullWidth
                                 margin="normal"
-                                id="code"
-                                label="کد تایید"
-                                name="code"
-                                autoComplete="code"
+                                id="repeat_password"
+                                label="تکرار رمز "
+                                name="repeat_password"
+                                autoComplete="repeat_password"
                                 autoFocus
                             />
-                            <p style={{ textAlign: "right", justify: "right" }}>
-                                درصورت عدم دریافت کد تایید <a href='#'>اینجا  </a>را کلیک کنید
-                            </p>
+
 
                             <Button
-                                type="submit"
+                                // type="submit"
                                 fullWidth
                                 variant="contained"
                                 color="primary"
-                                onClick={()=>props.history.push('password')}
+                                onClick={handleOpen}
                                 className={classNames(classes.submit ,classes.green)}
                             >
                                 <Typography variant="h6">
@@ -171,6 +195,25 @@ export default function Verification(props) {
 
 
                         </form>
+                        <Modal
+                            aria-labelledby="transition-modal-title"
+                            aria-describedby="transition-modal-description"
+                            className={classes.modal}
+                            open={open}
+                            onClose={handleClose}
+                            closeAfterTransition
+                            BackdropComponent={Backdrop}
+                            BackdropProps={{
+                                timeout: 500,
+                            }}
+                        >
+                            <Fade in={open}>
+                                <div className={classes.papermodal}>
+                                    <h2 className={classes.txtalgin} id="transition-modal-title">ثبت نام</h2>
+                                    <p className={classes.txtalgin} id="transition-modal-description">با موفقیت انجام شد</p>
+                                </div>
+                            </Fade>
+                        </Modal>
                         {/*<Link href="password.js" variant="body1" color="#65ccb8" alignItems="flex" >*/}
                         {/*    <p  >*/}
                         {/*        ورود به حساب کاربری*/}

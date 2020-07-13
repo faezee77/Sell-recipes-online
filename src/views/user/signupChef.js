@@ -15,6 +15,7 @@ import classNames from 'classnames'
 import { withStyles,createMuiTheme,MuiThemeProvider } from '@material-ui/core/styles';
 import {primaryColor, secondryColor} from "../../constants/defaultsValues";
 import clsx from "clsx";
+import pic from "../../images/pic.jpg";
 
 const theme = createMuiTheme({
     overrides: {
@@ -80,6 +81,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop:'10px'
     },
     root:{
+        backgroundImage: `url(${pic})`,
         paddingTop:'10px',
         paddingBottom:'15px'
     },
@@ -181,7 +183,7 @@ export default function SignUp(props) {
                                 required
                                 fullWidth
                                 name="email"
-                                label="آدرس ایمیل"
+                                label="آدرس ایمیل یا شماره همراه"
                                 id="email"
                             />
                             <CssTextField
