@@ -1,0 +1,757 @@
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+    },
+    paper: {
+
+        margin:"40px  100px 40px ",
+        maxWidth: 1000,
+
+    },
+    rootcart: {
+        maxWidth: 500,
+
+    },
+
+    image:{
+        margin:"40px 30px 10px 300px"
+    }
+
+}));
+
+export default function Cart() {
+    const classes = useStyles();
+
+    return (
+        <div className={classes.root}>
+            <Paper className={classes.paper}>
+                <Grid container spacing={5}>
+
+                    <Card className={classes.rootcart}>
+                        <CardActionArea>
+                            <Grid item>
+                                <img  alt="food1" src="food1.jpg" />
+                                <img className={classes.image} alt="food1" src="food1.jpg" />
+                            </Grid>
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="h2">
+                                    food
+                                </Typography>
+
+                            </CardContent>
+
+
+                        </CardActionArea>
+
+                    </Card>
+
+                </Grid>
+            </Paper>
+        </div>
+
+
+    );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React from 'react';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import ButtonBase from '@material-ui/core/ButtonBase';
+import Grid from '@material-ui/core/Grid';
+
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        root: {
+            flexGrow: 1,
+        },
+        paper: {
+
+            margin: '60px auto',
+            maxWidth: 600,
+
+
+
+
+        },
+        image: {
+            width: 300,
+            height: 128,
+            maxWidth: '100%',
+            maxHeight: '100%',
+            borderRadius: "25px"
+
+
+        },
+        img: {
+            margin: 'auto',
+            display: 'block',
+            maxWidth: '100%',
+            maxHeight: '100%',
+            borderRadius: "25px"
+
+        },
+    }),
+);
+
+export default function ComplexGrid() {
+    const classes = useStyles();
+
+    return (
+        <div className={classes.root}>
+            <Paper className={classes.paper}>
+                <Grid container spacing={2}>
+                    <Grid item>
+                        <ButtonBase className={classes.image}>
+                            <img className={classes.img} alt="food1" src="food1.jpg" />
+                        </ButtonBase>
+                    </Grid>
+                    <Grid item>
+                        <ButtonBase className={classes.image}>
+                            <img className={classes.img} alt="food1" src="food1.jpg" />
+                        </ButtonBase>
+                    </Grid>
+                    <Grid item>
+                        <ButtonBase className={classes.image}>
+                            <img className={classes.img} alt="food2" src="food2.jpg" />
+                        </ButtonBase>
+                    </Grid>
+
+                </Grid>
+            </Paper>
+        </div>
+    );
+}
+
+
+
+
+
+
+
+
+
+
+
+import React from 'react';
+import Button from '@material-ui/core/Button';
+import DeleteIcon from '@material-ui/icons/Delete';
+import {  makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import ButtonBase from '@material-ui/core/ButtonBase';
+import IconButton from '@material-ui/core/IconButton';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
+
+
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+    },
+
+
+
+    paper: {
+
+        margin: 'auto',
+        maxWidth: 10000,
+        maxHeight: 1000,
+        display: 'table',
+
+    },
+    paper2: {
+        margin: '10px 10px',
+        maxWidth:500,
+        borderRadius: "25px",
+        display: 'table',
+    },
+
+
+    img: {
+
+        display: 'block',
+        maxWidth: '100%',
+        maxHeight: '100%',
+        width: 300,
+        height: 128,
+
+
+    },
+
+}));
+
+
+
+
+export default function ComplexGrid() {
+    const classes = useStyles();
+
+
+    return (
+        <div className={classes.root}>
+
+            <Paper className={classes.paper}>
+
+                <Card className={classes.paper2}>
+                    <CardActionArea>
+                        <Grid item>
+
+                                <img className={classes.img} alt="food1" src="food1.jpg" />
+                        </Grid>
+                        <Grid item>
+
+                                <img className={classes.img} alt="food1" src="food1.jpg" />
+                        </Grid>
+
+                        <Typography gutterBottom variant="h5" component="h2">
+                            غلات
+                        </Typography>
+
+                    </CardActionArea>
+                </Card>
+
+            </Paper>
+
+
+        </div>
+
+
+    );
+}
+
+import React from 'react';
+import Button from '@material-ui/core/Button';
+import DeleteIcon from '@material-ui/icons/Delete';
+import {  makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import ButtonBase from '@material-ui/core/ButtonBase';
+import IconButton from '@material-ui/core/IconButton';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
+
+
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+    },
+
+
+
+    paper: {
+
+        margin: 'auto',
+        maxWidth: 10000,
+        maxHeight: 1000,
+        display: 'table',
+
+    },
+    paper2: {
+        margin: '10px 10px',
+        maxWidth:500,
+        borderRadius: "25px",
+        display: 'table',
+    },
+
+
+    img: {
+        margin:'0px 0px 10px 0px',
+        display: 'block',
+        maxWidth: '100%',
+        maxHeight: '100%',
+        width: 300,
+        height: 128,
+
+
+    },
+
+}));
+
+
+
+
+export default function ComplexGrid() {
+    const classes = useStyles();
+
+
+    return (
+        <div className={classes.root}>
+
+            <Paper className={classes.paper}>
+
+                <Card className={classes.paper2}>
+                    <CardActionArea>
+                        <Grid item>
+
+                            <img className={classes.img} alt="food1" src="food1.jpg" />
+                        </Grid>
+                        <Grid item>
+
+                            <img className={classes.img} alt="food2" src="food2.jpg" />
+                        </Grid>
+
+                        <Typography gutterBottom variant="h5" component="h2">
+                            غلات
+                        </Typography>
+
+                    </CardActionArea>
+                </Card>
+
+            </Paper>
+
+
+        </div>
+
+
+    );
+}
+
+
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import food1 from '../src/New/food1.jpg';
+import food2 from '../src/New/food2.jpg';
+const useStyles = makeStyles((theme) => ({
+    root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        overflow: 'hidden',
+        backgroundColor: theme.palette.background.paper,
+    },
+    gridList: {
+        width: 500,
+        height: 450,
+    },
+}));
+
+
+
+  const tileData = [
+    {
+      img: food1 ,food1,
+      title: 'new',
+      author: 'author',
+     cols: 2,
+    },
+
+  ];
+
+
+export default function ImageGridList() {
+    const classes = useStyles();
+
+    return (
+        <div className={classes.root}>
+            <GridList cellHeight={160} className={classes.gridList} cols={3}>
+                {tileData.map((tile) => (
+                    <GridListTile key={tile.img} cols={tile.cols || 1}>
+                        <img src={tile.img} alt={tile.title} />
+                    </GridListTile>
+                ))}
+            </GridList>
+
+        </div>
+    );
+}
+
+
+
+
+
+
+import React from 'react';
+import Button from '@material-ui/core/Button';
+import DeleteIcon from '@material-ui/icons/Delete';
+import {  makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import ButtonBase from '@material-ui/core/ButtonBase';
+import IconButton from '@material-ui/core/IconButton';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
+
+
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+    },
+
+
+
+    paper: {
+
+        margin: '200px 100px 100px 200px ',
+        borderRadius: "25px",
+display:'table',
+        maxWidth: 10000,
+        maxHeight: 1000,
+
+
+    },
+    cart: {
+        margin: '50pxpx ',
+        maxWidth:'auto',
+        borderRadius: "25px",
+        display: 'table',
+    },
+
+
+    img: {
+        margin:'0px 0px 5px 0px',
+        display: 'table',
+        maxWidth: '50%',
+        maxHeight: '50%',
+        width: 'auto',
+        height: 'auto'
+
+
+    },
+    img1: {
+
+        display: 'table',
+        maxWidth: '50%',
+        maxHeight: '50%',
+        width: 'auto',
+        height: 'auto'
+
+
+
+    },
+    img2: {
+        margin:'0px 0px 100px 275px ',
+        display: 'block',
+        maxWidth: '75%',
+        maxHeight: '75%',
+        width: 'auto',
+        height: 'auto'
+
+    },
+
+}));
+
+
+
+
+export default function ComplexGrid() {
+    const classes = useStyles();
+
+
+    return (
+        <div className={classes.root}>
+
+            <Paper className={classes.paper}>
+
+                <Card className={classes.cart}>
+                    <CardActionArea>
+
+
+                        <Grid item>
+                            <img className={classes.img} alt="food1" src="food1.jpg" />
+                            <img className={classes.img1} alt="food2" src="food2.jpg" />
+
+
+                        </Grid>
+
+
+
+
+                    </CardActionArea>
+                </Card>
+            </Paper>
+
+                <Paper className={classes.paper}>
+
+                <Card className={classes.cart}>
+                    <CardActionArea>
+
+
+                        <Grid item>
+                            <img className={classes.img} alt="food1" src="food1.jpg" />
+                            <img className={classes.img1} alt="food2" src="food2.jpg" />
+
+
+                        </Grid>
+
+
+
+
+                    </CardActionArea>
+                </Card>
+
+            </Paper>
+
+
+        </div>
+
+
+    );
+}
+
+
+
+
+
+
+
+
+
+
+
+import React from 'react';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import {  makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import Grid from '@material-ui/core/Grid';
+
+
+
+import food1 from "./New/food2.jpg";
+import food2 from "./New/food2.jpg";
+import food3 from "./New/food3.jpg";
+import food4 from "./New/food5.jpg";
+import food5 from "./New/food5.jpg";
+const useStyles = makeStyles((theme) => ({
+    paper: {
+
+        width:1200,
+        height:700,
+        position:'relative',
+        //flexbox
+        display:'flex',
+        flexDirection:'row',
+        direction:'ltr',
+        flexWrap:'wrap',
+        justifyContent:'center',
+    },
+
+
+    cart: {
+        width:300,
+        height:200,
+        margin:theme.spacing(12,10),
+
+        borderRadius: "20px",
+
+    },
+
+   /* cart1: {
+        position:'absolute',
+        right:100,
+        top:100,
+
+        width:300,
+        height:200,
+
+        borderRadius: "20px",
+    },
+    cart2: {
+        position:'absolute',
+        right:100,
+        top:400,
+
+        width:300,
+        height:200,
+
+        borderRadius: "20px",
+    },*/
+
+    root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        backgroundColor: theme.palette.background.paper,
+    },
+    gridList: {
+        width: 400,
+        height: 300,
+
+    },
+
+
+        context2:{
+            position:'absolute',
+            right:110,
+            top:310,
+
+    },
+
+}));
+
+const tileData = [
+    {
+        img:food1 ,
+        title: 'I',
+
+        cols: 2,
+    },
+    {
+        img:food2 ,
+        title: 'm',
+
+    },
+    {
+        img:food3 ,
+        title: 'a',
+
+    },
+
+]
+
+
+export default function ImageGridList() {
+    const classes = useStyles();
+
+    return (
+        <div className={classes.root}>
+            <Paper  className={classes.paper}  >
+
+                <Card className={classes.cart}>
+                    <CardActionArea>
+
+                    <GridList cellHeight={160} className={classes.gridList} cols={2}>
+                {tileData.map((tile) => (
+                    <GridListTile     key={tile.img} cols={tile.cols || 1}>
+                        <img  src={tile.img} alt={tile.title} />
+                    </GridListTile>
+                ))}
+            </GridList>
+                    </CardActionArea>
+                </Card>
+
+                <Card className={classes.cart}>
+                    <CardActionArea>
+
+                        <GridList cellHeight={160} className={classes.gridList} cols={2}>
+                            {tileData.map((tile) => (
+                                <GridListTile     key={tile.img} cols={tile.cols || 1}>
+                                    <img  src={tile.img} alt={tile.title} />
+                                </GridListTile>
+                            ))}
+                        </GridList>
+                    </CardActionArea>
+                </Card>
+
+
+                <Card className={classes.cart}>
+                    <CardActionArea>
+
+                        <GridList cellHeight={160} className={classes.gridList} cols={2}>
+                            {tileData.map((tile) => (
+                                <GridListTile     key={tile.img} cols={tile.cols || 1}>
+                                    <img  src={tile.img} alt={tile.title} />
+                                </GridListTile>
+                            ))}
+                        </GridList>
+                    </CardActionArea>
+                </Card>
+
+                <Card className={classes.cart}>
+                    <CardActionArea>
+
+                        <GridList cellHeight={160} className={classes.gridList} cols={2}>
+                            {tileData.map((tile) => (
+                                <GridListTile     key={tile.img} cols={tile.cols || 1}>
+                                    <img  src={tile.img} alt={tile.title} />
+                                </GridListTile>
+                            ))}
+                        </GridList>
+                    </CardActionArea>
+                </Card>
+                /*<Grid item xs container direction="column" spacing={2}>
+                    <Grid item xs>
+                        <Typography gutterBottom  className={classes.context2}  variant="h1"  variant="body">
+                            غلات
+                        </Typography>
+                    </Grid>
+                </Grid>*/
+
+            </Paper>
+
+
+        </div>
+    );
+}
+

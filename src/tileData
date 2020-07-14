@@ -1,0 +1,30 @@
+import food1 from "./New/food2.jpg";
+import food2 from "./New/food2.jpg";
+import food3 from "./New/food3.jpg";
+import food5 from "./New/food5.jpg";
+
+const tileData = [
+    {
+        img:food1 ,
+        title: 'Image',
+        author: 'author',
+        cols: 2,
+    },
+    {
+        img:food2 ,
+        title: 'Image',
+        author: 'author',
+    },
+    {
+        img:food3 ,
+        title: 'Image',
+        author: 'author',
+    },
+    {
+        img:food5 ,
+        title: 'Image',
+        author: 'author',
+    },
+
+];
+export default tileData;
