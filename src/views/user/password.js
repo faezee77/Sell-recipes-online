@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import {DropzoneArea} from 'material-ui-dropzone'
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import chef from "../../images/Cooking-Chefs-PPT-Backgrounds.jpg"
+import chef from "../../images/food.jpg"
 import classNames from 'classnames'
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
@@ -88,7 +88,8 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom:'90px'
     },
     myimg:{
-        position:"relative"
+        position:"relative",
+        height:'430px'
     },
     mytxt:{
         position:"absolute",
@@ -126,7 +127,7 @@ const GreenCheckbox = withStyles({
 
 
 
-export default function PassWord(props) {
+export default function Password(props) {
     const classes = useStyles();
     const [open,setOpen]=React.useState(false)
 
@@ -139,21 +140,21 @@ export default function PassWord(props) {
     };
 
     return (
-        <div className={classes.root}>
-            <Grid container
-                  direction="row"
-                  justify="center"
-                  component="main"
-                  className={classes.root}
-            >
+        // <div className={classes.root}>
+        //     <Grid container
+        //           direction="row"
+        //           justify="center"
+        //           component="main"
+        //           className={classes.root}
+        //     >
 
 
-                <Grid item md={4} component={Paper} elevation={6}
+                <Grid  md={12}  elevation={6}
                 >
                     <div className={classes.paper} width='50%'>
-                        <Typography component="h1" variant="h5">
-                            رمز عبور
-                        </Typography>
+                        {/*<Typography component="h1" variant="h5">*/}
+                        {/*    رمز عبور*/}
+                        {/*</Typography>*/}
                         <form className={classes.form} noValidate>
 
                             <CssTextField
@@ -180,18 +181,18 @@ export default function PassWord(props) {
                             />
 
 
-                            <Button
-                                // type="submit"
-                                fullWidth
-                                variant="contained"
-                                color="primary"
-                                onClick={handleOpen}
-                                className={classNames(classes.submit ,classes.green)}
-                            >
-                                <Typography variant="h6">
-                                    تایید
-                                </Typography>
-                            </Button>
+                            {/*<Button*/}
+                            {/*    // type="submit"*/}
+                            {/*    fullWidth*/}
+                            {/*    variant="contained"*/}
+                            {/*    color="primary"*/}
+                            {/*    onClick={handleOpen}*/}
+                            {/*    className={classNames(classes.submit ,classes.green)}*/}
+                            {/*>*/}
+                            {/*    <Typography variant="h6">*/}
+                            {/*        تایید*/}
+                            {/*    </Typography>*/}
+                            {/*</Button>*/}
 
 
                         </form>
@@ -214,26 +215,26 @@ export default function PassWord(props) {
                                 </div>
                             </Fade>
                         </Modal>
-                        {/*<Link href="password.js" variant="body1" color="#65ccb8" alignItems="flex" >*/}
+                        {/*<Link href="passwordChef.js" variant="body1" color="#65ccb8" alignItems="flex" >*/}
                         {/*    <p  >*/}
                         {/*        ورود به حساب کاربری*/}
                         {/*    </p>*/}
                         {/*</Link>*/}
                     </div>
                 </Grid>
-                <Grid container className={classes.myimg} component={Paper} elevation={6} square item md={3} >
-
-                    <img  width='100%' height='100%' src={chef} alt='img' />
-                    {/*<Link className={classes.mytxt} href="password.js" variant="body1" alignItems="flex" >*/}
-                    {/*    <p  >*/}
-                    {/*        ورود به حساب کاربری*/}
-                    {/*    </p>*/}
-                    {/*</Link>*/}
-
-                </Grid>
-
-            </Grid>
-        </div>
+        //         <Grid container className={classes.myimg} component={Paper} elevation={6} square item md={3} >
+        //
+        //             <img  width='100%' height='100%' src={chef} alt='img' />
+        //             {/*<Link className={classes.mytxt} href="passwordChef.js" variant="body1" alignItems="flex" >*/}
+        //             {/*    <p  >*/}
+        //             {/*        ورود به حساب کاربری*/}
+        //             {/*    </p>*/}
+        //             {/*</Link>*/}
+        //
+        //         </Grid>
+        //
+        //     </Grid>
+        // </div>
 
     );
 }

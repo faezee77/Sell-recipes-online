@@ -54,7 +54,6 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
     },
     appBar: {
-        borderRadius:'0 0 40px 40px ',
         zIndex: theme.zIndex.drawer + 1,
         transition: theme.transitions.create(['width', 'margin'], {
             easing: theme.transitions.easing.sharp,

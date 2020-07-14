@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import {DropzoneArea} from 'material-ui-dropzone'
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import chef from "../../images/Cooking-Chefs-PPT-Backgrounds.jpg"
+import chef from "../../images/food.jpg"
 import classNames from 'classnames'
 
 import { withStyles,createMuiTheme,MuiThemeProvider } from '@material-ui/core/styles';
@@ -82,11 +82,12 @@ const useStyles = makeStyles((theme) => ({
     },
     root:{
         backgroundImage: `url(${pic})`,
-        paddingTop:'80px',
-        paddingBottom:'90px'
+        paddingTop:'70px',
+        paddingBottom:'95px'
     },
     myimg:{
-        position:"relative"
+        position:"relative",
+        height:'430px'
     },
     mytxt:{
         position:"absolute",
@@ -113,21 +114,21 @@ export default function Verification(props) {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
-            <Grid container
-                  direction="row"
-                  justify="center"
-                  component="main"
-                  className={classes.root}
-            >
+        // <div className={classes.root}>
+        //     <Grid container
+        //           direction="row"
+        //           justify="center"
+        //           component="main"
+        //           className={classes.root}
+        //     >
 
 
-                <Grid item md={4} component={Paper} elevation={6}
+                <Grid item md={12}  elevation={6}
                 >
                     <div className={classes.paper} width='50%'>
-                        <Typography component="h1" variant="h5">
-                            احراز کاربر
-                        </Typography>
+                        {/*<Typography component="h1" variant="h5">*/}
+                        {/*    احراز کاربر*/}
+                        {/*</Typography>*/}
                         <form className={classes.form} noValidate>
 
                             <CssTextField
@@ -156,41 +157,29 @@ export default function Verification(props) {
                                 درصورت عدم دریافت کد تایید <a href='#'>اینجا  </a>را کلیک کنید
                             </p>
 
-                            <Button
-                                type="submit"
-                                fullWidth
-                                variant="contained"
-                                color="primary"
-                                onClick={()=>props.history.push('password')}
-                                className={classNames(classes.submit ,classes.green)}
-                            >
-                                <Typography variant="h6">
-                                    تایید
-                                </Typography>
-                            </Button>
+                            {/*<Button*/}
+                            {/*    type="submit"*/}
+                            {/*    fullWidth*/}
+                            {/*    variant="contained"*/}
+                            {/*    color="primary"*/}
+                            {/*    onClick={()=>props.history.push('password')}*/}
+                            {/*    className={classNames(classes.submit ,classes.green)}*/}
+                            {/*>*/}
+                            {/*    <Typography variant="h6">*/}
+                            {/*        تایید*/}
+                            {/*    </Typography>*/}
+                            {/*</Button>*/}
 
 
                         </form>
-                        {/*<Link href="password.js" variant="body1" color="#65ccb8" alignItems="flex" >*/}
+                        {/*<Link href="passwordChef.js" variant="body1" color="#65ccb8" alignItems="flex" >*/}
                         {/*    <p  >*/}
                         {/*        ورود به حساب کاربری*/}
                         {/*    </p>*/}
                         {/*</Link>*/}
                     </div>
                 </Grid>
-                <Grid container className={classes.myimg} component={Paper} elevation={6} square item md={3} >
 
-                    <img  width='100%' height='100%' src={chef} alt='img' />
-                    {/*<Link className={classes.mytxt} href="password.js" variant="body1" alignItems="flex" >*/}
-                    {/*    <p  >*/}
-                    {/*        ورود به حساب کاربری*/}
-                    {/*    </p>*/}
-                    {/*</Link>*/}
-
-                </Grid>
-
-            </Grid>
-        </div>
 
     );
 }

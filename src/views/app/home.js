@@ -19,7 +19,7 @@ class Home extends Component{
                     {/*<PrimarySearchAppBar/>*/}
                     <Carousel
                         animation='fade'
-                        navButtonsAlwaysVisible='True'
+                        // navButtonsAlwaysVisible='True'
                         interval={2000}
                     >
                         {
