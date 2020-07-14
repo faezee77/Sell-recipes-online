@@ -10,9 +10,13 @@ import rtl from "jss-rtl";
 
 const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
 const theme = createMuiTheme({
-  direction: "rtl"
+  direction: "rtl",
+  typography: {
+    fontFamily: '"Vazir", sans-serif'
+  }
 });
 ReactDOM.render(
+  
   <StylesProvider jss={jss}>
   <ThemeProvider theme={theme}>
   <React.StrictMode>

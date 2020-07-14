@@ -10,11 +10,17 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "jss-rtl": "^0.3.0",
+    "material-table": "^1.63.1",
+    "material-ui-dropzone": "^3.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-jss": "^10.3.0",
+    "react-material-ui-carousel": "^1.6.0",
     "react-player": "^2.3.1",
-    "react-scripts": "3.4.1"
+    "react-responsive-carousel": "^3.2.9",
+    "react-scripts": "3.4.1",
+    "react-video-js-player": "^1.1.1",
+    "vazir-font": "^26.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
