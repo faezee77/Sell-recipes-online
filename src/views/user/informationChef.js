@@ -103,6 +103,8 @@ export default function SignUp(props) {
                                         name="username"
                                         autoComplete="username"
                                         autoFocus
+                                        helperText='نام کاربری ترکیبی از حروف انگلیسی و عدد است'
+
                                     />
 
                                 <CssTextField

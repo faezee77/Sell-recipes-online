@@ -1,20 +1,12 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
+import React, {useState,useEffect} from 'react';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import {DropzoneArea} from 'material-ui-dropzone'
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import chef from "../../../public/images/food.jpg"
-import classNames from 'classnames'
 
-import { withStyles,createMuiTheme,MuiThemeProvider } from '@material-ui/core/styles';
-import {primaryColor, secondryColor} from "../../constants/defaultsValues";
-import clsx from "clsx";
+import { withStyles,createMuiTheme } from '@material-ui/core/styles';
+import {primaryColor} from "../../constants/defaultsValues";
 import pic from "../../../public/images/pic.jpg";
 
 const theme = createMuiTheme({
@@ -114,13 +106,6 @@ export default function Information(props) {
     const classes = useStyles();
 
     return (
-        // <div className={classes.root}>
-        //     <Grid container
-        //           direction="row"
-        //           justify="center"
-        //           component="main"
-        //           className={classes.root}
-        //     >
 
 
                 <Grid item md={12}  elevation={6}
@@ -141,6 +126,7 @@ export default function Information(props) {
                                 name="name"
                                 autoComplete="name"
                                 autoFocus
+
                             />
 
                             <CssTextField
@@ -153,29 +139,10 @@ export default function Information(props) {
                                 name="username"
                                 autoComplete="username"
                                 autoFocus
+                                helperText='نام کاربری ترکیبی از حروف انگلیسی و عدد است'
+
                             />
 
-                            {/*<CssTextField*/}
-                            {/*    id="custom-css-outlined-input password"*/}
-                            {/*    variant="outlined"*/}
-                            {/*    margin="normal"*/}
-                            {/*    required*/}
-                            {/*    fullWidth*/}
-                            {/*    name="phone number"*/}
-                            {/*    label="شماره همراه"*/}
-                            {/*    id="phone number"*/}
-                            {/*/>*/}
-
-                            {/*<CssTextField*/}
-                            {/*    id="custom-css-outlined-input password"*/}
-                            {/*    variant="outlined"*/}
-                            {/*    margin="normal"*/}
-                            {/*    required*/}
-                            {/*    fullWidth*/}
-                            {/*    name="address"*/}
-                            {/*    label="آدرس"*/}
-                            {/*    id="address"*/}
-                            {/*/>*/}
 
                             <CssTextField
                                 id="custom-css-outlined-input password"
@@ -186,31 +153,9 @@ export default function Information(props) {
                                 name="email"
                                 label="آدرس ایمیل یا شماره همراه"
                                 id="email"
+
                             />
-                            {/*<CssTextField*/}
-                            {/*    id="custom-css-outlined-input password"*/}
-                            {/*    variant="outlined"*/}
-                            {/*    margin="normal"*/}
-                            {/*    required*/}
-                            {/*    fullWidth*/}
-                            {/*    name="creditCard"*/}
-                            {/*    label="شماره حساب"*/}
-                            {/*    id="creditCard"*/}
-                            {/*/>*/}
-                            {/*<br></br>*/}
-                            {/*<Grid style={{ textAlign: "right", justify: "right" }}>*/}
 
-                            {/*    <FormControlLabel*/}
-                            {/*        control={<GreenCheckbox name="checkedG" />}*/}
-                            {/*        label="آشپز دارای مدرک"*/}
-
-                            {/*    />*/}
-
-                            {/*    <FormControlLabel*/}
-                            {/*        control={<GreenCheckbox name="checkedG" />}*/}
-                            {/*        label="آشپز تجربی"*/}
-                            {/*    />*/}
-                            {/*</Grid>*/}
                             <Grid style={{ textAlign: "right", justify: "right" }}>
 
                                 <FormControlLabel
@@ -220,81 +165,10 @@ export default function Information(props) {
                                 />
 
                             </Grid>
-                            {/*<Typography style={{direction:'rtl'}}>*/}
-                            {/*    اگر دارای مدرک هستید در زیر آن را آپلود کنید:</Typography>*/}
-                            {/*<MuiThemeProvider theme={theme}>*/}
-
-                            {/*    <DropzoneArea*/}
-                            {/*        // onChange={this.handleChange.bind(this)}*/}
-                            {/*    />*/}
-                            {/*</MuiThemeProvider>*/}
-                            {/*<Grid container spacing={3}>*/}
-                            {/*    <Grid item xs={12} sm={6}>*/}
-
-                            {/*<CssTextField*/}
-                            {/*    id="custom-css-outlined-input password"*/}
-                            {/*    variant="outlined"*/}
-                            {/*    margin="normal"*/}
-                            {/*    required*/}
-                            {/*    fullWidth*/}
-                            {/*    name="password"*/}
-                            {/*    label="رمز عبور"*/}
-                            {/*    type="password"*/}
-
-                            {/*/>*/}
-                            {/*    </Grid>*/}
-                            {/*    <Grid item xs={12} sm={6}>*/}
-
-                            {/*<CssTextField*/}
-                            {/*    id="custom-css-outlined-input password"*/}
-                            {/*    variant="outlined"*/}
-                            {/*    margin="normal"*/}
-                            {/*    required*/}
-                            {/*    fullWidth*/}
-                            {/*    name="password"*/}
-                            {/*    label="تکرار رمز عبور"*/}
-                            {/*    type="password"*/}
-
-
-                            {/*/>*/}
-                            {/*    </Grid>*/}
-                            {/*</Grid>*/}
-
-                            {/*<Button*/}
-                            {/*    type="submit"*/}
-                            {/*    fullWidth*/}
-                            {/*    variant="contained"*/}
-                            {/*    color="primary"*/}
-                            {/*    onClick={()=>props.history.push('verification')}*/}
-                            {/*    className={classNames(classes.submit ,classes.green)}*/}
-                            {/*>*/}
-                            {/*    <Typography variant="h6">*/}
-                            {/*        تایید*/}
-                            {/*    </Typography>*/}
-                            {/*</Button>*/}
-
-
                         </form>
-                        {/*<Link href="passwordChef.js" variant="body1" color="#65ccb8" alignItems="flex" >*/}
-                        {/*    <p  >*/}
-                        {/*        ورود به حساب کاربری*/}
-                        {/*    </p>*/}
-                        {/*</Link>*/}
                     </div>
                 </Grid>
-        //         <Grid container className={classes.myimg} component={Paper} elevation={6} square item md={3} >
-        //
-        //             <img  width='100%' height='100%' src={chef} alt='img' />
-        //             <Link className={classes.mytxt} href="passwordChef.js" variant="body1" alignItems="flex" >
-        //                 <p  >
-        //                     ورود به حساب کاربری
-        //                 </p>
-        //             </Link>
-        //
-        //         </Grid>
-        //
-        //     </Grid>
-        // </div>
+
 
     );
 }

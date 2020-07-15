@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -11,10 +11,6 @@ import logo from "../../../public/images/food.jpg"
 
 
 import { withStyles } from '@material-ui/core/styles';
-import { create } from 'jss';
-import rtl from 'jss-rtl';
-import {  jssPreset } from '@material-ui/core/styles';
-import { createMuiTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Snackbar from '@material-ui/core/Snackbar';
@@ -85,6 +81,51 @@ export default function SignIn() {
     vertical: 'top',
     horizontal: 'center',
   });
+    const [username,setusername]=useState()
+    const [password,setpassword]=useState()
+    const [errorusername,seterrorusername]=useState()
+    const [errorpassword,seterropassword]=useState()
+    const [validusername,setvalidusername] = useState(false)
+    const [validpassword,setvalidpassword] = useState(false)
+
+
+    const handleChange = (event,field)=>{
+        console.log(field)
+        if (field ==='password'){
+            setpassword(event.target.value)
+            setvalidpassword(false)
+        }else if(field ==='username'){
+            setusername(event.target.value)
+            setvalidusername(false)
+        }
+        console.log(password,username)
+    }
+
+    const handleValidation = () =>{
+
+        //username
+        if(!username){
+            setvalidusername(true)
+            seterrorusername('نام کاربری نمیتواند خالی باشد')
+        }
+        //Email
+        if(!password){
+            setvalidpassword(true)
+            seterropassword('رمز عبور نمیتواند خالی باشد')
+        }
+        console.log(password,typeof password)
+        if(typeof password!== "undefined"){
+
+            if (password.length < 8) {
+                setvalidpassword(true)
+                seterropassword('رمزعبور باید حداقل 8 کاراکتر باشد')
+        }
+        else if (/([A-Z]+)/g.test(password)) {
+                setvalidpassword(true)
+                seterropassword('رمز باید شامل حروف بزرگ باشد')
+        }
+            }
+    }
 
   const { vertical, horizontal, open } = state;
 
@@ -92,6 +133,7 @@ export default function SignIn() {
   const handleClose = () => {
     setState({ ...state, open: false });
   };
+
 
   return (
 
@@ -114,6 +156,7 @@ export default function SignIn() {
               <form className={classes.form} autoComplete="off">
 
                 <CssTextField
+                    error={validusername}
                   variant="outlined"
                   id="custom-css-outlined-input password"
                   margin="normal"
@@ -122,8 +165,11 @@ export default function SignIn() {
                   InputLabelProps={{ style: { textAlign: 'right' } }}
                   fullWidth
                   label="نام کاربری"
+                    helperText={validusername? errorusername:''}
+                    onChange={(event)=>handleChange(event,'username')}
                 />
                 <CssTextField
+                    error={validpassword}
                   variant="outlined"
                   id="custom-css-outlined-input password"
                   margin="normal"
@@ -131,8 +177,8 @@ export default function SignIn() {
                   fullWidth
                   label="رمز عبور"
                   type="password"
-                // helperText="لطفا این مورد را تکمیل کنید."
-                // error
+                    helperText={validpassword? errorpassword:''}
+                    onChange={(event)=>handleChange(event,'password')}
                 />
 
                 <br></br>
@@ -150,12 +196,12 @@ export default function SignIn() {
                 <br></br>
 
                 <Button
-                  type="submit"
                   fullWidth
                   variant="contained"
                   color="primary"
                   className={ classes.green}
                   size="large"
+                  onClick={handleValidation}
                 >
                   <Typography component="h6" variant="h5">
                     ورود

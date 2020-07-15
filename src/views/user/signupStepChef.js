@@ -153,7 +153,6 @@ export default function SignUpStepChef(props) {
     const classes = useStyles();
     const [activeStep, setActiveStep] = React.useState(0);
     const [completed, setCompleted] = React.useState({});
-
     const steps = getSteps();
 
     const totalSteps = () => {
@@ -223,6 +222,23 @@ export default function SignUpStepChef(props) {
                             <Grid container justify="center" md={12}>
                                 <Grid md={3}>
                                     <ColorButton
+                                        fullWidth
+                                        variant="contained"
+                                        color="primary"
+                                        disabled={activeStep === 0}
+                                        onClick={handleBack}
+                                        className={classNames(classes.submit ,classes.green,classes.button)}
+                                    >
+                                        <Typography variant="h6">
+                                            بازگشت
+                                        </Typography>
+                                    </ColorButton>
+
+
+                                </Grid>
+                                <Grid md={1}/>
+                                <Grid md={3}>
+                                    <ColorButton
                                         // type="submit"
                                         fullWidth
                                         variant="contained"
@@ -235,22 +251,7 @@ export default function SignUpStepChef(props) {
                                             تایید
                                         </Typography>
                                     </ColorButton>
-                                </Grid>
-                                <Grid md={1}/>
-                                <Grid md={3}>
 
-                                    <ColorButton
-                                        fullWidth
-                                        variant="contained"
-                                        color="primary"
-                                        disabled={activeStep === 0}
-                                        onClick={handleBack}
-                                        className={classNames(classes.submit ,classes.green,classes.button)}
-                                    >
-                                        <Typography variant="h6">
-                                            بازگشت
-                                        </Typography>
-                                    </ColorButton>
                                 </Grid>
                             </Grid>
                         </div>

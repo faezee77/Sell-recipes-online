@@ -97,6 +97,8 @@ export default function PasswordChef(props) {
                                 name="password"
                                 label="رمز عبور"
                                 id="password"
+                                helperText='رمز عبور باید حداقل 8کاراکتر باشد'
+
                             />
                             <CssTextField
                                 id="custom-css-outlined-input password"
