@@ -29,6 +29,7 @@ const CssTextField = withStyles({
 const useStyles = makeStyles((theme) => ({
     paper: {
         margin: theme.spacing(4, 4),
+        paddingTop:'80px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -82,9 +83,9 @@ export default function PasswordChef(props) {
                 <Grid item md={12} elevation={6}
                 >
                     <div className={classes.paper} width='50%'>
-                        <Typography component="h1" variant="h5">
-                            رمز عبور
-                        </Typography>
+                        {/*<Typography component="h1" variant="h5">*/}
+                        {/*    رمز عبور*/}
+                        {/*</Typography>*/}
                         <form className={classes.form} noValidate>
 
                             <CssTextField

@@ -11,7 +11,7 @@ import Divider from "@material-ui/core/Divider";
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
-        marginLeft:17,
+        paddingLeft:17,
         marginTop:50,
         justifyContent:"center",
         justifyItems:"center",

@@ -28,6 +28,7 @@ const CssTextField = withStyles({
 const useStyles = makeStyles((theme) => ({
     paper: {
         margin: theme.spacing(4, 4),
+        paddingTop:'80px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -68,9 +69,9 @@ export default function VerificationChef(props) {
                 <Grid item md={12}  elevation={6}
                 >
                     <div className={classes.paper} width='50%'>
-                        <Typography component="h1" variant="h5">
-                            احراز کاربر
-                        </Typography>
+                        {/*<Typography component="h1" variant="h5">*/}
+                        {/*    احراز کاربر*/}
+                        {/*</Typography>*/}
                         <form className={classes.form} noValidate>
 
                             <CssTextField
@@ -95,7 +96,7 @@ export default function VerificationChef(props) {
                                 autoComplete="code"
                                 autoFocus
                             />
-                            <p style={{ textAlign: "right", justify: "right" }}>
+                            <p style={{ textAlign: "right", justify: "right",fontSize:'14px' }}>
                                 درصورت عدم دریافت کد تایید <a href='#'>اینجا  </a>را کلیک کنید
                             </p>
 

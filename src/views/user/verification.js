@@ -69,6 +69,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        paddingTop:'40px'
     },
     form: {
         width: '100%', // Fix IE 11 issue.
@@ -97,18 +98,6 @@ const useStyles = makeStyles((theme) => ({
         fontSize:'20px'
     },
 }));
-const GreenCheckbox = withStyles({
-    root: {
-        color: '#3AAFA9',
-        '&$checked': {
-            color: '#3aa2af',
-        },
-    },
-    checked: {},
-})((props) => <Checkbox color="default" {...props} />);
-
-
-
 
 export default function Verification(props) {
     const classes = useStyles();
@@ -123,8 +112,7 @@ export default function Verification(props) {
         //     >
 
 
-                <Grid item md={12}  elevation={6}
-                >
+                <Grid item md={12}  elevation={6}>
                     <div className={classes.paper} width='50%'>
                         {/*<Typography component="h1" variant="h5">*/}
                         {/*    احراز کاربر*/}
@@ -153,30 +141,14 @@ export default function Verification(props) {
                                 autoComplete="code"
                                 autoFocus
                             />
-                            <p style={{ textAlign: "right", justify: "right" }}>
+                            <p style={{ textAlign: "right", justify: "right" ,fontSize:'14px'}}>
                                 درصورت عدم دریافت کد تایید <a href='#'>اینجا  </a>را کلیک کنید
                             </p>
 
-                            {/*<Button*/}
-                            {/*    type="submit"*/}
-                            {/*    fullWidth*/}
-                            {/*    variant="contained"*/}
-                            {/*    color="primary"*/}
-                            {/*    onClick={()=>props.history.push('password')}*/}
-                            {/*    className={classNames(classes.submit ,classes.green)}*/}
-                            {/*>*/}
-                            {/*    <Typography variant="h6">*/}
-                            {/*        تایید*/}
-                            {/*    </Typography>*/}
-                            {/*</Button>*/}
 
 
                         </form>
-                        {/*<Link href="passwordChef.js" variant="body1" color="#65ccb8" alignItems="flex" >*/}
-                        {/*    <p  >*/}
-                        {/*        ورود به حساب کاربری*/}
-                        {/*    </p>*/}
-                        {/*</Link>*/}
+
                     </div>
                 </Grid>
 

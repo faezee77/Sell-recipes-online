@@ -21,6 +21,7 @@ class App extends Component {
                                 path={`${match.url}/home`}
                                 render={props => <Home {...props} />}
                             />
+
                         </Switch>
                     </Suspense>
                 </div>

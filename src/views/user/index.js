@@ -15,6 +15,10 @@ const Login = React.lazy(() =>
     import(/* webpackChunkName: "views-home" */ './login'),
 
 );
+const ForgetPassword = React.lazy(() =>
+    import(/* webpackChunkName: "views-home" */ './forgetPasswordStep'),
+
+);
 
 
 
@@ -39,6 +43,10 @@ class App extends Component {
                         <Route
                             path={`${match.url}/login`}
                             render={props => <Login {...props} />}
+                        />
+                        <Route
+                            path={`${match.url}/forgetpassword`}
+                            render={props => <ForgetPassword {...props} />}
                         />
                     </Switch>
                 </Suspense>

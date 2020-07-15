@@ -51,7 +51,7 @@ class Support extends Component{
         return(
             <div>
                  <Typography className={classes.title}  variant="h5" noWrap>
-                     با ما تجربه کیند
+                     با ما تجربه کنید
                  </Typography>
                 <Divider className={classes.divider}/>
              <Grid container justify="center">

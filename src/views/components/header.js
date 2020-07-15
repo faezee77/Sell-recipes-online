@@ -18,7 +18,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import {MuiThemeProvider} from "@material-ui/core";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import {primaryColor,secondryColor} from "../../constants/defaultsValues";
-import logo from '../../images/logo1.png'
+import logo from '../../images/logo.png'
 const theme = createMuiTheme({
     palette: {
         primary: {
@@ -182,16 +182,16 @@ export default function PrimarySearchAppBar() {
     return (
         <div className={classes.grow}>
             <MuiThemeProvider theme={theme}>
-                <AppBar position="static"  className={classes.appbar}>
+                <AppBar position="fixed"  className={classes.appbar}>
                     <Toolbar>
-                        {/*<IconButton*/}
-                        {/*    edge="start"*/}
-                        {/*    className={classes.menuButton}*/}
-                        {/*    color="inherit"*/}
-                        {/*    aria-label="open drawer"*/}
-                        {/*>*/}
-                            {/*<MenuIcon />*/}
-                        {/*</IconButton>*/}
+                        <IconButton
+                            edge="start"
+                            className={classes.menuButton}
+                            color="inherit"
+                            aria-label="open drawer"
+                        >
+                            <MenuIcon />
+                        </IconButton>
 
                         <div className={classes.search}>
                             <div className={classes.searchIcon}>

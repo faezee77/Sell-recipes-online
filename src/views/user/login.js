@@ -19,6 +19,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
+import {primaryColor} from "../../constants/defaultsValues";
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -62,16 +63,12 @@ root:{
 
   green: {
     color: '#fff',
-    backgroundColor: "#65ccb8",
+    backgroundColor: primaryColor,
     '&:hover': {
-      backgroundColor: '#65ccb8',
+      backgroundColor: primaryColor,
     },
 
   },
-    txtr:{
-      textAlign:'right'
-    }
-
 }));
 const GreenCheckbox = withStyles({
   root: {
@@ -104,7 +101,9 @@ export default function SignIn() {
       <div >
         <Grid justify="center" className={classes.root}
           container component="main">
-
+            <Grid item md={3} alignItems="center">
+                <img width='100%' height='100%' src={logo}/>
+            </Grid>
 
           <Grid textAlign="right" item xs={1} sm={1} md={4} component={Paper} elevation={6} >
             <div className={classes.paper}>
@@ -173,18 +172,18 @@ export default function SignIn() {
                 <br></br>
 
                 <Grid marginTop={"80"} justify="flex-start"
-                  container direction="column" alignItems="flex-end">
+                  container direction="column" alignItems="flex-start">
                   <Grid item xs >
-                    <Link href="#" variant="body1" color="#65ccb8" >
-                      <p  className={classes.txtr}>
+                    <Link href="#" variant="body1" >
+                      <p  >
                         رمز خود را فراموش کرده اید؟
                       </p>
                     </Link>
                   </Grid>
                   <Grid item>
-                    <Link className={classes.txtr} href="#" variant="body1" color="#65ccb8">
+                    <Link href="#" variant="body1" >
                       حساب کاربری ندارید؟ ایجاد حساب
-                    </Link>
+                    </Link >
                   </Grid>
 
                 </Grid>
@@ -192,9 +191,7 @@ export default function SignIn() {
               </form>
             </div>
           </Grid>
-          <Grid item md={3} alignItems="center">
-            <img width='100%' height='100%' src={logo}/>
-          </Grid>
+
         </Grid>
       </div>
 

@@ -8,6 +8,8 @@ import Grid from "@material-ui/core/Grid";
 import Cards from "../components/gridCard";
 import ImageGridList from "../components/imagegrid"
 import SideBar from '../components/sidebar'
+import RecipeList from "../components/RecipeList";
+
 class Home extends Component{
     render() {
 
@@ -27,7 +29,7 @@ class Home extends Component{
                         }
                     </Carousel>
                     <Support/>
-                    <Cards/>
+                    <RecipeList/>
                     <ImageGridList/>
                 </Grid>
 

@@ -6,16 +6,16 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import chef from "../../images/chefmw.jpg"
+import chef from "../../images/food.jpg"
 import classNames from 'classnames'
 import { withStyles } from '@material-ui/core/styles';
 import {primaryColor} from "../../constants/defaultsValues";
 import clsx from "clsx";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
-import Verification from "./verificationChef";
-import InformationChef from "./informationChef";
-import Password from "./passwordChef";
+import Verification from "./verification";
+import Information from "./information";
+import Password from "./password";
 import StepLabel from '@material-ui/core/StepLabel';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import PermPhoneMsgIcon from '@material-ui/icons/PermPhoneMsg';
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     },
     myimg:{
         position:"relative",
-        height:'700px'
+        height:'540px'
     },
     mytxt:{
         position:"absolute",
@@ -81,13 +81,22 @@ const useStyles = makeStyles((theme) => ({
         textAlign:'left'
     },
     step:{
-            paddingTop:'50px',
+        paddingTop:'50px',
         paddingBottom:0
     },
     divcon:{
-        height:'480px'
+        height:'320px'
     },
 }));
+const GreenCheckbox = withStyles({
+    root: {
+        color: '#3AAFA9',
+        '&$checked': {
+            color: '#3aa2af',
+        },
+    },
+    checked: {},
+})((props) => <Checkbox color="default" {...props} />);
 
 const useColorlibStepIconStyles = makeStyles({
     root: {
@@ -133,13 +142,13 @@ function QontoStepIcon(props) {
     );
 }
 function getSteps() {
-    return ['اطلاعات شخصی آشپز', 'احراز آشپز', 'رمز عبور'];
+    return ['اطلاعات شخصی', 'احراز کاربر', 'رمز عبور'];
 }
 
 function getStepContent(step) {
     switch (step) {
         case 0:
-            return <InformationChef/>;
+            return <Information/>;
         case 1:
             return <Verification/>;
         case 2:
@@ -149,7 +158,7 @@ function getStepContent(step) {
     }
 }
 
-export default function SignUpStepChef(props) {
+export default function SignUp() {
     const classes = useStyles();
     const [activeStep, setActiveStep] = React.useState(0);
     const [completed, setCompleted] = React.useState({});
@@ -205,23 +214,25 @@ export default function SignUpStepChef(props) {
                     </Link>
 
                 </Grid>
+
                 <Grid item md={5} component={Paper} elevation={6}
                 >
-                    <Stepper className={classes.step} nonLinear activeStep={activeStep}>
-                        {steps.map((label, index) => (
-                            <Step key={label}>
-                                <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
-                            </Step>
-                        ))}
-                    </Stepper>
+            <Stepper className={classes.step} nonLinear activeStep={activeStep}>
+                {steps.map((label, index) => (
+                    <Step key={label}>
+                        <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
+                    </Step>
+                ))}
+            </Stepper>
                     <div>
 
-                        <div>
-                            <div className={classes.divcon}>
+                            <div>
+                                <div className={classes.divcon}>
                                 {getStepContent(activeStep)}
-                            </div>
-                            <Grid container justify="center" md={12}>
-                                <Grid md={3}>
+                                </div>
+
+                                <Grid container justify="center" md={12}>
+                                    <Grid md={3}>
                                     <ColorButton
                                         // type="submit"
                                         fullWidth
@@ -231,13 +242,13 @@ export default function SignUpStepChef(props) {
                                         className={classNames(classes.submit ,classes.green,classes.button)}
                                     >
 
-                                        <Typography variant="h6">
+                                            <Typography variant="h6">
                                             تایید
-                                        </Typography>
+                                            </Typography>
                                     </ColorButton>
-                                </Grid>
-                                <Grid md={1}/>
-                                <Grid md={3}>
+                                    </Grid>
+                                    <Grid md={1}/>
+                                    <Grid md={3}>
 
                                     <ColorButton
                                         fullWidth
@@ -251,9 +262,9 @@ export default function SignUpStepChef(props) {
                                             بازگشت
                                         </Typography>
                                     </ColorButton>
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                        </div>
+                            </div>
                     </div>
 
                 </Grid>

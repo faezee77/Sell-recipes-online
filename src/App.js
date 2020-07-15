@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 
 const ViewMain = React.lazy(() =>
-    import(/* webpackChunkName: "views" */ './views')
+    import(/* webpackChunkName: "views" */ './views/main')
 );
 const ViewApp = React.lazy(() =>
     import(/* webpackChunkName: "views-app" */ './views/app')
