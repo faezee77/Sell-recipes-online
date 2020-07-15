@@ -17,7 +17,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
 import SearchIcon from "@material-ui/icons/Search";
 import InputBase from "@material-ui/core/InputBase";
-import logo from '../../images/logo.png'
+import logo from '../../../public/images/logo.png'
 import Badge from "@material-ui/core/Badge";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import NotificationsIcon from "@material-ui/icons/Notifications";

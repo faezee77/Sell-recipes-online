@@ -2,8 +2,8 @@ import PrimarySearchAppBar from '../components/header'
 import React,{Component} from "react";
 import Carousel from 'react-material-ui-carousel'
 import Support from "../components/support";
-import image1 from '../../images/1.jpg'
-import image2 from '../../images/South-Indian-Bruschetta-Recipe.jpg'
+import image1 from '../../../public/images/1.jpg'
+import image2 from '../../../public/images/South-Indian-Bruschetta-Recipe.jpg'
 import Grid from "@material-ui/core/Grid";
 import Cards from "../components/gridCard";
 import ImageGridList from "../components/imagegrid"

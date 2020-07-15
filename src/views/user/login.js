@@ -7,7 +7,7 @@ import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
 
 import Grid from '@material-ui/core/Grid';
-import logo from "../../images/food.jpg"
+import logo from "../../../public/images/food.jpg"
 
 
 import { withStyles } from '@material-ui/core/styles';

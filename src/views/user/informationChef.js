@@ -5,7 +5,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { withStyles} from '@material-ui/core/styles';
-import pic from "../../images/pic.jpg";
+import pic from "../../../public/images/pic.jpg";
 
 const CssTextField = withStyles({
     root: {

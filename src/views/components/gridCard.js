@@ -2,9 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import RecipeReviewCard from '../components/card'
-import pic1 from '../../images/1.jpg'
-import pic2 from '../../images/South-Indian-Bruschetta-Recipe.jpg'
-import pic3 from '../../images/images.jpg'
+import pic1 from '../../../public/images/1.jpg'
+import pic2 from '../../../public/images/South-Indian-Bruschetta-Recipe.jpg'
+import pic3 from '../../../public/images/images.jpg'
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 

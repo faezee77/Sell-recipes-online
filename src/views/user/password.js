@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import {DropzoneArea} from 'material-ui-dropzone'
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import chef from "../../images/food.jpg"
+import chef from "../../../public/images/food.jpg"
 import classNames from 'classnames'
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
@@ -17,7 +17,7 @@ import { withStyles,createMuiTheme,MuiThemeProvider } from '@material-ui/core/st
 import {primaryColor, secondryColor} from "../../constants/defaultsValues";
 import clsx from "clsx";
 import Modal from "@material-ui/core/Modal";
-import pic from '../../images/pic.jpg'
+import pic from '../../../public/images/pic.jpg'
 
 const theme = createMuiTheme({
     overrides: {

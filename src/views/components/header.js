@@ -18,7 +18,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import {MuiThemeProvider} from "@material-ui/core";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import {primaryColor,secondryColor} from "../../constants/defaultsValues";
-import logo from '../../images/logo.png'
+import logo from '../../../public/images/logo.png'
 const theme = createMuiTheme({
     palette: {
         primary: {

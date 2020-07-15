@@ -2,12 +2,12 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
-import co1 from '../../images/co1.jpg'
-import co2 from '../../images/co2.jpg'
-import co3 from '../../images/co3.jpg'
-import co4 from '../../images/co4.jpg'
-import co5 from '../../images/co5.jpg'
-import co6 from '../../images/co6.jpg'
+import co1 from '../../../public/images/co1.jpg'
+import co2 from '../../../public/images/co2.jpg'
+import co3 from '../../../public/images/co3.jpg'
+import co4 from '../../../public/images/co4.jpg'
+import co5 from '../../../public/images/co5.jpg'
+import co6 from '../../../public/images/co6.jpg'
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";

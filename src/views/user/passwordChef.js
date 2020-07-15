@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/core/styles';
 import {primaryColor} from "../../constants/defaultsValues";
-import pic from '../../images/pic.jpg'
+import pic from '../../../public/images/pic.jpg'
 
 
 const CssTextField = withStyles({

@@ -15,7 +15,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import img1 from '../../images/South-Indian-Bruschetta-Recipe.jpg'
+import img1 from '../../../public/images/South-Indian-Bruschetta-Recipe.jpg'
 
 const useStyles = makeStyles((theme) => ({
     root: {

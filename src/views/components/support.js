@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
-import image1 from '../../images/s2.jpg'
-import pay1 from '../../images/p1.png'
-import q1 from '../../images/q1.jpg'
+import image1 from '../../../public/images/s2.jpg'
+import pay1 from '../../../public/images/p1.png'
+import q1 from '../../../public/images/q1.jpg'
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Toolbar from "@material-ui/core/Toolbar";

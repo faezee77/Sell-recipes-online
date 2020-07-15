@@ -6,7 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import chef from "../../images/food.jpg"
+import chef from "../../../public/images/food.jpg"
 import classNames from 'classnames'
 import { withStyles } from '@material-ui/core/styles';
 import {primaryColor} from "../../constants/defaultsValues";
