@@ -23,15 +23,13 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MoreIcon from "@material-ui/icons/MoreVert";
-import {MuiThemeProvider} from "@material-ui/core";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import {primaryColor, secondryColor} from "../../constants/defaultsValues";
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import {primaryColor} from "../../constants/defaultsValues";
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import BookmarksIcon from '@material-ui/icons/Bookmarks';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import FilterNoneIcon from '@material-ui/icons/FilterNone';
+import HowToVoteIcon from '@material-ui/icons/HowToVote';
+import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
 
 const drawerWidth = 135;
 // const myTheme = createMuiTheme({
@@ -57,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
         width:'30px',
         minWidth:'30px'
     },
-     root: {
+    root: {
         display: 'flex',
     },
     appBar: {
@@ -211,6 +209,7 @@ export default function SideBar(props) {
 
     const handleListItemClick = (event, index) => {
         setSelectedIndex(index);
+
     };
 
     const mobileMenuId = 'primary-search-account-menu-mobile';
@@ -338,58 +337,56 @@ export default function SideBar(props) {
                     <ListItem
                         selected={selectedIndex === 0}
                         onClick={(event) => handleListItemClick(event, 0)}
-                        component="a" href="../view/app/user/user-account"
+                        component="a" href="../view/app/chef/profile"
                         button
                         key="myPost">
                         <ListItemIcon>
                             <FilterNoneIcon className={classes.icon}/>
                         </ListItemIcon>
-                        {open? <ListItemText className={classes.mytxt} primary="پست های من" />:''}
+                        {open? <ListItemText className={classes.mytxt} primary="صفحه من" />:''}
                     </ListItem>
 
                     <ListItem
                         selected={selectedIndex === 1}
                         onClick={(event) => handleListItemClick(event, 1)}
-                        component="a" href="../view/app/user/edit-profile-user"
+                        component="a" href="../view/app/chef/edit-profile"
                         button key="profile">
                         <ListItemIcon>
                             <AccountCircle className={classes.icon} />
                         </ListItemIcon>
                         {open? <ListItemText primary="پروفایل" />:''}
                     </ListItem>
+                    <ListItem
+                        selected={selectedIndex === 4}
+                        onClick={(event) => handleListItemClick(event, 4)}
+                        component="a" href="../view/app/chef/add-post"
+                        button key="password">
+                        <ListItemIcon>
+                            <AddToPhotosIcon className={classes.icon}/>
+                        </ListItemIcon>
+                        {open? <ListItemText  primary="ایجاد پست" />:''}
+                    </ListItem>
 
 
                     <ListItem
                         selected={selectedIndex === 2}
                         onClick={(event) => handleListItemClick(event, 2)}
-                        component="a" href="../view/app/user/favorite"
+                        component="a" href="../view/app/chef/account"
                         button key="favorite">
                         <ListItemIcon>
-                            <BookmarksIcon className={classes.icon}/>
+                            <HowToVoteIcon className={classes.icon}/>
                         </ListItemIcon>
-                        {open? <ListItemText className={classes.mytxt} primary="نشان شده ها" />:''}
+                        {open? <ListItemText className={classes.mytxt} primary="حساب آشپز" />:''}
                     </ListItem>
 
-                    <ListItem
-                        selected={selectedIndex === 3}
-                        onClick={(event) => handleListItemClick(event, 3)}
-                        component="a" href="../view/app/user/cart"
-                        button key="cart">
-                        <ListItemIcon>
-                            <Badge badgeContent={4} color="secondary">
-                                <ShoppingCartIcon className={classes.icon}/>
-                            </Badge>
-                        </ListItemIcon>
-                        {open? <ListItemText  primary="سبد خرید" />:''}
-                    </ListItem>
 
                     <ListItem
                         selected={selectedIndex === 4}
                         onClick={(event) => handleListItemClick(event, 4)}
-                        component="a" href="../view/app/user/change-password"
+                        component="a" href="../view/app/chef/change-password"
                         button key="password">
                         <ListItemIcon>
-                                <VpnKeyIcon className={classes.icon}/>
+                            <VpnKeyIcon className={classes.icon}/>
                         </ListItemIcon>
                         {open? <ListItemText  primary="تغییر رمز" />:''}
                     </ListItem>

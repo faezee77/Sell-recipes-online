@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "../components/sidebar";
+import ChefSidebar from "../components/chefSideBar";
 import {makeStyles} from "@material-ui/core/styles";
 
 
@@ -12,13 +12,13 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function AppLayout(props) {
+function ChefLayout(props) {
     const classes = useStyles();
 
     return (
         <div id="app-container">
             {/*<MiniDrawer/>*/}
-            <Sidebar />
+            <ChefSidebar />
             {/*<TopNav />*/}
             <main>
                 <div className={classes.containerFluid}>
@@ -29,4 +29,4 @@ function AppLayout(props) {
     );
 
 }
-export default AppLayout;
+export default ChefLayout;

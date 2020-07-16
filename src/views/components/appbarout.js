@@ -230,7 +230,7 @@ export default function SideBar() {
                                 <HomeIcon className={classes.icon}/>
                             </IconButton>
                         <Link className={classes.mytxt} href="#" variant="body1" alignItems="flex" >
-                            <p>ورود / خروج</p>
+                            <p>ورود / ثبت نام </p>
                         </Link>
 
                     </div>

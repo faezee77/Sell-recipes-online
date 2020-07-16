@@ -1,7 +1,7 @@
 import React, { Component, Suspense } from 'react';
 import { Route, withRouter, Switch, Redirect } from 'react-router-dom';
 import AppLayout from '../layout/AppLayout'
-
+import ChefLayout from "../layout/ChefLayout";
 const Home = React.lazy(() =>
     import(/* webpackChunkName: "views-home" */ './home')
 );
@@ -12,7 +12,7 @@ class App extends Component {
         const {match} = this.props;
 
         return (
-            <AppLayout>
+            <ChefLayout>
                 <div className="dashboard-wrapper">
                     <Suspense fallback={<div className="loading"/>}>
                         <Switch>
@@ -25,7 +25,7 @@ class App extends Component {
                         </Switch>
                     </Suspense>
                 </div>
-            </AppLayout>
+            </ChefLayout>
         )
     }
 }

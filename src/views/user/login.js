@@ -228,8 +228,12 @@ export default function SignIn() {
                   </Grid>
                   <Grid item>
                     <Link href="#" variant="body1" >
-                      حساب کاربری ندارید؟ ایجاد حساب
+                      ایجاد حساب آشپز
                     </Link >
+                      /
+                      <Link href="#" variant="body1" >
+                          ایجاد حساب کاربر
+                      </Link >
                   </Grid>
 
                 </Grid>
