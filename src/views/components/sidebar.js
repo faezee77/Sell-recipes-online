@@ -32,6 +32,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import BookmarksIcon from '@material-ui/icons/Bookmarks';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import FilterNoneIcon from '@material-ui/icons/FilterNone';
+import {NavLink} from "react-router-dom";
 
 const drawerWidth = 135;
 // const myTheme = createMuiTheme({
@@ -335,6 +336,7 @@ export default function SideBar(props) {
                 </div>
                 {/*<Divider />*/}
                 <List>
+                    <NavLink  to="../app/test"  style={{ textDecoration: 'none' ,color:'black'}}>
                     <ListItem
                         selected={selectedIndex === 0}
                         onClick={(event) => handleListItemClick(event, 0)}
@@ -346,6 +348,8 @@ export default function SideBar(props) {
                         </ListItemIcon>
                         {open? <ListItemText className={classes.mytxt} primary="پست های من" />:''}
                     </ListItem>
+                    </NavLink>
+                    <NavLink  to="../app/test"  style={{ textDecoration: 'none' ,color:'black'}}>
 
                     <ListItem
                         selected={selectedIndex === 1}
@@ -357,19 +361,22 @@ export default function SideBar(props) {
                         </ListItemIcon>
                         {open? <ListItemText primary="پروفایل" />:''}
                     </ListItem>
-
+                    </NavLink>
+                    <NavLink  to="../app/test"  style={{ textDecoration: 'none' ,color:'black'}}>
 
                     <ListItem
                         selected={selectedIndex === 2}
                         onClick={(event) => handleListItemClick(event, 2)}
-                        component="a" href="../view/app/user/favorite"
+                        // component="a" href="../view/app/user/favorite"
                         button key="favorite">
                         <ListItemIcon>
                             <BookmarksIcon className={classes.icon}/>
                         </ListItemIcon>
                         {open? <ListItemText className={classes.mytxt} primary="نشان شده ها" />:''}
                     </ListItem>
+                    </NavLink>
 
+                    <NavLink  to="../app/test"  style={{ textDecoration: 'none' ,color:'black'}}>
                     <ListItem
                         selected={selectedIndex === 3}
                         onClick={(event) => handleListItemClick(event, 3)}
@@ -382,7 +389,9 @@ export default function SideBar(props) {
                         </ListItemIcon>
                         {open? <ListItemText  primary="سبد خرید" />:''}
                     </ListItem>
+                    </NavLink>
 
+                    <NavLink  to="../app/test"  style={{ textDecoration: 'none' ,color:'black'}}>
                     <ListItem
                         selected={selectedIndex === 4}
                         onClick={(event) => handleListItemClick(event, 4)}
@@ -393,8 +402,9 @@ export default function SideBar(props) {
                         </ListItemIcon>
                         {open? <ListItemText  primary="تغییر رمز" />:''}
                     </ListItem>
+                    </NavLink>
 
-
+                    <NavLink  to="../app/test"  style={{ textDecoration: 'none' ,color:'black'}}>
                     <ListItem
                         selected={selectedIndex === 5}
                         onClick={(event) => handleListItemClick(event, 5)}
@@ -405,6 +415,7 @@ export default function SideBar(props) {
                         </ListItemIcon>
                         {open? <ListItemText primary="خروج" />:''}
                     </ListItem>
+                    </NavLink>
                 </List>
 
             </Drawer>

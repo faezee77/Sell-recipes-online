@@ -30,6 +30,7 @@ import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import FilterNoneIcon from '@material-ui/icons/FilterNone';
 import HowToVoteIcon from '@material-ui/icons/HowToVote';
 import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
+import { NavLink } from 'react-router-dom';
 
 const drawerWidth = 135;
 // const myTheme = createMuiTheme({
@@ -334,6 +335,7 @@ export default function SideBar(props) {
                 </div>
                 {/*<Divider />*/}
                 <List>
+                    <NavLink  to="../app/test"  style={{ textDecoration: 'none' ,color:'black'}}>
                     <ListItem
                         selected={selectedIndex === 0}
                         onClick={(event) => handleListItemClick(event, 0)}
@@ -345,29 +347,35 @@ export default function SideBar(props) {
                         </ListItemIcon>
                         {open? <ListItemText className={classes.mytxt} primary="صفحه من" />:''}
                     </ListItem>
+                    </NavLink>
 
+                    <NavLink  to="../app/test"  style={{ textDecoration: 'none' ,color:'black'}}>
                     <ListItem
                         selected={selectedIndex === 1}
                         onClick={(event) => handleListItemClick(event, 1)}
-                        component="a" href="../view/app/chef/edit-profile"
+                        // component="a" href="../view/app/chef/edit-profile"
                         button key="profile">
                         <ListItemIcon>
                             <AccountCircle className={classes.icon} />
                         </ListItemIcon>
                         {open? <ListItemText primary="پروفایل" />:''}
                     </ListItem>
+                    </NavLink>
+
+                    <NavLink  to="../app/test"  style={{ textDecoration: 'none' ,color:'black'}}>
                     <ListItem
                         selected={selectedIndex === 4}
                         onClick={(event) => handleListItemClick(event, 4)}
-                        component="a" href="../view/app/chef/add-post"
+                        component="link" href="../view/app/chef/add-post"
                         button key="password">
                         <ListItemIcon>
                             <AddToPhotosIcon className={classes.icon}/>
                         </ListItemIcon>
                         {open? <ListItemText  primary="ایجاد پست" />:''}
                     </ListItem>
+                    </NavLink>
 
-
+                    <NavLink  to="../app/test"  style={{ textDecoration: 'none' ,color:'black'}}>
                     <ListItem
                         selected={selectedIndex === 2}
                         onClick={(event) => handleListItemClick(event, 2)}
@@ -378,8 +386,9 @@ export default function SideBar(props) {
                         </ListItemIcon>
                         {open? <ListItemText className={classes.mytxt} primary="حساب آشپز" />:''}
                     </ListItem>
+                    </NavLink>
 
-
+                    <NavLink  to="../app/test"  style={{ textDecoration: 'none' ,color:'black'}}>
                     <ListItem
                         selected={selectedIndex === 4}
                         onClick={(event) => handleListItemClick(event, 4)}
@@ -390,8 +399,9 @@ export default function SideBar(props) {
                         </ListItemIcon>
                         {open? <ListItemText  primary="تغییر رمز" />:''}
                     </ListItem>
+                    </NavLink>
 
-
+                    <NavLink  to="../app/test"  style={{ textDecoration: 'none' ,color:'black'}}>
                     <ListItem
                         selected={selectedIndex === 5}
                         onClick={(event) => handleListItemClick(event, 5)}
@@ -402,6 +412,7 @@ export default function SideBar(props) {
                         </ListItemIcon>
                         {open? <ListItemText primary="خروج" />:''}
                     </ListItem>
+                    </NavLink>
                 </List>
 
             </Drawer>
